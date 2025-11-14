@@ -27,6 +27,13 @@
 ...
 
 **Jak uzywac GNU najpopularniejszego kompilatora dla c/c++ ?**
+ 
+ kompilacja i uruchomienie pierwszego programu 
+```bash
+gcc main.c | ./a.out
+
+```
+
 
 ...
 
