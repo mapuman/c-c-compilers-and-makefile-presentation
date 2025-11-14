@@ -4,6 +4,6 @@
 ### kompilatory 
 
 
-#### makefile
+### makefile
 
 ### make 
