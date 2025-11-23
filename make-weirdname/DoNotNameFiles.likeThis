@@ -1,0 +1,5 @@
+all:
+	@echo "Makefile to nie jedyna dozwolona nazwa."
+	@echo "Można używać flagi -f by Make obsłużył dowolny plik tekstowy jako Makefile!"
+	@echo "Wykona on sie wtedy jakby był w katalogu z którego uruchomiło się make.
+
