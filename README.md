@@ -14,17 +14,57 @@
 * Dla innych jezykow np Rust: rustc, Java: javac etc
 
 **Proces kompilacji**
-1. Pereprocesor
 
-...
+***1. Preprocessing (Krok przedkompilacyjny)***
+Co się dzieje: Przetworzenie dyrektyw preprocesora
 
-2. kompilator
+Działania:
 
-...
+Włączenie plików nagłówkowych (#include)
 
-3. linkowanie
+Rozwinięcie makr (#define)
 
-...
+Kompilacja warunkowa (#ifdef, #ifndef)
+
+Rezultat: Czysty kod C++ bez dyrektyw preprocesora
+
+***2. Kompilacja właściwa (Translation)***
+Co się dzieje: Tłumaczenie kodu C++ na kod asemblera
+
+Działania:
+
+Analiza składniowa i semantyczna
+
+Kontrola typów
+
+Generacja kodu asemblera dla danego procesora
+
+Rezultat: Plik w assemblerze (.s lub .asm)
+
+***3. Asemblacja (Assembly)***
+Co się dzieje: Tłumaczenie kodu asemblera na kod maszynowy
+
+Działania:
+
+Konwersja instrukcji asemblera na binarne kody operacji
+
+Tworzenie plików obiektowych
+
+Rezultat: Plik obiektowy (.o lub .obj)
+
+***4. Linkowanie (Linking)***
+Co się dzieje: Łączenie wszystkich plików obiektowych w jeden program
+
+Działania:
+
+Rozwiązywanie referencji między plikami
+
+Łączenie z bibliotekami standardowymi
+
+Tworzenie finalnego pliku wykonywalnego
+
+Rezultat: Gotowy program (.exe na Windows, bez rozszerzenia na Linux)
+
 
 **Jak uzywac GNU najpopularniejszego kompilatora dla c/c++ ?**
  
