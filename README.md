@@ -128,8 +128,8 @@ CEL: ZALEŻNOŚCI
 Konkretną regułę możemy włączyć dając ją jako argument Make.
 
 ### Uwaga! Poleceń Make nie można traktować tak jak Basha!
-$( ) jest symbolem odczytu zmiennej / uruchomienia funkcji wbudowanej w Make.
-Aby zastosować uruchomić bashowy podprogram należy użyć $$( ).
+**\$\( \)** - jest symbolem odczytu zmiennej / uruchomienia funkcji wbudowanej w Make.
+Aby uruchomić podprogram w shellu należy użyć "$$( )".
 ```Makefile
 rule:
     @echo $$(cat a.txt)
@@ -174,12 +174,12 @@ W przykładzie: dla każdego pliku .o, od którego będzie zależał inny plik w
 
 ## Podsumowanie
 
-Kompilację w C/CPP możemy podzielić na:
-1. Preprocessing
-2. Kompilację ( do kodu assemblerowego )
-3. Asemblację ( do plików obiektowych )
-4. Linkowanie ( plików obiektowych z bibliotekami )
+### Kompilację w C/CPP możemy podzielić na:
+#### 1. Preprocessing
+#### 2. Kompilację ( do kodu assemblerowego )
+#### 3. Asemblację ( do plików obiektowych )
+#### 4. Linkowanie ( plików obiektowych z bibliotekami )
 
-Make automatyzuje proces kompilacji, linkowania i uruchamiania programów w C/C++. Ułatwia tworzenie bibliotek, zarządzanie zależnościami oraz wykonywanie własnych skryptów.
+### Make automatyzuje proces kompilacji, linkowania i uruchamiania programów w C/C++. Ułatwia i usprawnia tworzenie bibliotek, zarządzanie zależnościami oraz wykonywanie własnych skryptów. 
 
 
