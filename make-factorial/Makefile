@@ -37,7 +37,7 @@ clean:
 # Nazwy po znaku | oznaczają że te pliki/foldery muszą istnieć przed wykonaniem reguły
 # Make wykona ich regułę jeśli nie zostały stworzone
 $(BIN_DIR)/main: $(OBJ) | $(BIN_DIR)
-	$(GCC) $(FLAGS) $ -o $@
+	$(GCC) $(FLAGS) $+ -o $@
 
 # Makefile Możemy dopasować wzorzec symbolem %
 

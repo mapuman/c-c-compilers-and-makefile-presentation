@@ -1,5 +1,7 @@
+GCC ?= g++
+
 %.o: %.cpp
-	g++ "$<" -c -o "$@"
+	$(GCC) "$<" -c -o "$@"
 
 .PHONY: rule pwdExample pwdSilent
 

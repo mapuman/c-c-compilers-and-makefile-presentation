@@ -122,7 +122,7 @@ Kompilowanie takiego projektu ręcznie jest żmudne i nanoszenie nawet małych z
 
 Istnieją jednak narzędzia do automatycznej kompilacji, które usprawniają ten proces. W tej prezentacji omówimy na przykładzie jedno z nich - ***make***.
 
-Należy jednak pamiętać że istnieją inne alternatywy. Niektóre tworzone z myślą o konkretnym języku programowania. Dla przykładu:
+Należy pamiętać że istnieją inne alternatywy. Niektóre tworzone z myślą o konkretnym języku programowania. Dla przykładu:
 * Cmake ( C/C++ )
 * Apache Maven, Gradle, Ant (Java)
 
@@ -153,17 +153,19 @@ make -f make-weirdname/DoNotNameFiles.likeThis
 Możemy również zrobić próbne wykonanie *na sucho* z flagami **-n** lub **--dry-run**.
 Wtedy wszystkie komendy zostaną wypisane do konsoli bez ich wykonywania.
 
+#### ***W Make polecenia w regułach muszą zaczynać się od tabulatora. Użycie spacji zamiast tabulatora spowoduje błąd!***
+
 ### Budowa reguły
 Make wykonuje reguły, które mają taką budowę:
 ```Makefile
 CEL: ZALEŻNOŚCI
 	POLECENIA 
 ```
-#### CEL (TARGET) to pliki które chcemy utworzyć lub zadanie ktore chcemy utworzyć.
-#### ZALEŻNOŚĆI (DEPENDENCIES)- pliki lub inne zadania.
+#### CEL (TARGET) to pliki które chcemy utworzyć lub zadanie, ktore chcemy utworzyć.
+#### ZALEŻNOŚCI (DEPENDENCIES)- pliki lub inne zadania.
 #### POLECENIA - wykonywane są w powłoce systemowej
 
- Make sprawdza wtedy czy jakaś z drzewa ZALEŻNOŚCI (najczęściej  plików) została zmieniona po utworzeniu CELU i jeśli tak to wykonuje polecenia, uaktualniając datę CELU.
+ Make wykona regułe tylko wtedy, gdy któryś element drzewa zależności został zmieniony później niż data modyfikacji CELU.
 
 Konkretną regułę możemy włączyć dając ją jako argument Make.
 
@@ -203,7 +205,17 @@ W Make możemy określić dyrektywami cel naszej reguły:
 * **$+** - wszystkie zależności (z duplikatami)
 * **$^** - wszystkie zależności (bez duplikatów)
 * **$\*** - część nazwy dopasowana przez % w regule wzorcowej.
-  
+
+Wywołując make możemy ustawić początkową wartość zmiennej:
+```Makefile
+GCC ?= g++
+main: main.cpp
+    $(GCC) main.cpp -o main
+```
+```bash
+make GCC="clang"
+```
+
 #### Dopasowanie wzorów
 Możemy za pomocą symbolu **%** dopasować prerekwizyt do targetu i vice versa.
 ```Makefile
