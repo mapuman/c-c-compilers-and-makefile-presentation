@@ -1,3 +1,0 @@
-build/bin/a
-build/bin/b
-build/bin/aha
