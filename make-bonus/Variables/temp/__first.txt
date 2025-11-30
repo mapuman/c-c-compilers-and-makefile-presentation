@@ -1,0 +1,4 @@
+build/bin/a
+build/bin/b
+build/bin/aha
+build/bin/another

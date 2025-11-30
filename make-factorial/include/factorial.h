@@ -7,4 +7,4 @@ bool is_integer(const char*);
 void printAllFactorialsUpTo(int x);
 
 #endif
-#undef FACTORIAL_HEADER_1234
+

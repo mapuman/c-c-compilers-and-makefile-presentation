@@ -6,7 +6,7 @@ GCC ?= g++
 .PHONY: rule pwdExample pwdSilent
 
 rule:
-	@echo $$(cat a.txt)
+	echo $$(cat a.txt)
 
 pwdExample:
 	cd foo
@@ -19,14 +19,14 @@ pwdSilent:
 	pwd
 	cd foo && pwd
 
-FOO := $(BAR)
-BAR = HelloThere
+base := a b c
 
-Asignment:
-	echo $(FOO)
+FOO := $(base)
+BAR = $(base)
 
-FOO = $(BAR)
-BAR = HelloThere
+base += HelloThere
 
-LazyAsignment:
-	echo $(FOO)
+CompAssignment:
+	@echo FOO := $(FOO)
+	@echo BAR "(lazy)" = $(BAR)
+

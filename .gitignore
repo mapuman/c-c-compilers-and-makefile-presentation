@@ -1,10 +1,12 @@
 # executables
 *.exe
+*.out
 
 # C/C++ object files
 *.o
 
 build/
+temp/
 
 .vscode
 
